@@ -1,6 +1,6 @@
+import streamlit as st
 st.set_page_config(layout="wide", page_icon=None, initial_sidebar_state="auto", page_title=None, menu_items={'Get help': None, 'Report a bug': None, 'About': None})
 
-import streamlit as st
 import openai
 
 def chatbot_response(skills_list):
