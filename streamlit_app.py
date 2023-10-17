@@ -1,3 +1,5 @@
+st.set_page_config(layout="wide", page_icon=None, initial_sidebar_state="auto", page_title=None, menu_items={'Get help': None, 'Report a bug': None, 'About': None})
+
 import streamlit as st
 import openai
 
@@ -20,9 +22,9 @@ def chatbot_response(skills_list):
     message = response['choices'][0]['message']['content']
     return message.strip()
 
-st.title("GPT-4 Chatbot for Business Ideas")
+st.title("Aideas to monitize")
 
-user_input = st.text_input("Enter your skills or interests:")
+user_input = st.text_input("Enter your skills,interests,curiosities")
 if st.button("Send"):
     if user_input.lower() == "bye":
         st.write("Goodbye! Have a great day!")
