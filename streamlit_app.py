@@ -1,10 +1,11 @@
+import os
 import streamlit as st
 st.set_page_config(layout="wide", page_icon=None, initial_sidebar_state="auto", page_title=None, menu_items={'Get help': None, 'Report a bug': None, 'About': None})
 
 import openai
 
 def chatbot_response(skills_list):
-    openai.api_key = "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"
+   openai.api_key = os.getenv("OPENAI_API_KEY")
     model = "gpt-4"
     max_tokens = 900
 
@@ -24,7 +25,7 @@ def chatbot_response(skills_list):
 
 st.title("Aideas to monitize")
 
-user_input = st.text_input("Enter your skills,interests,curiosities")
+user_input = st.text_input("Enter your skills, interests, curiosities")
 if st.button("Send"):
     if user_input.lower() == "bye":
         st.write("Goodbye! Have a great day!")
