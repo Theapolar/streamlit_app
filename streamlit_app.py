@@ -5,7 +5,7 @@ import openai
 st.set_page_config(layout="wide", page_icon=None, initial_sidebar_state="auto", page_title=None, menu_items={'Get help': None, 'Report a bug': None, 'About': None})
 
 def chatbot_response(skills_list):
-    openai.api_key = os.getenv("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")
+    openai.api_key = "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"
     model = "gpt-4"
     max_tokens = 900
     prompt = f"The user has skills in or cares about {skills_list}..."
