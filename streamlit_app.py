@@ -5,9 +5,10 @@ st.set_page_config(layout="wide", page_icon=None, initial_sidebar_state="auto", 
 import openai
 
 def chatbot_response(skills_list):
-   openai.api_key = os.getenv("OPENAI_API_KEY")
+    openai.api_key = os.getenv("OPENAI_API_KEY")
     model = "gpt-4"
     max_tokens = 900
+
 
     prompt = f"The user has skills in or cares about {skills_list}...Generate a list of 10 highly creative and unique business ideas for solopreneurs incorporating best practices from various frameworks like Russel Brunson's 'value ladder,' Lean Startup's 'MVP' (Minimum Viable Product), and Value Proposition Design's 'customer job' concept. The ideas should align with their skills and interests, be actionable, require minimal capital, and offer quick returns. Keep the descriptions under one sentence. Also, list 5 concise skills or subjects they should focus on learning to excel in these services. make sure to fit 10 ideas an 5 skills to learn within max 900 tokens.No waste of words"
 
