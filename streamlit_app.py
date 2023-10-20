@@ -2,11 +2,15 @@ import os
 import streamlit as st
 import openai
 
-# Set API key from environment variable
-api_key = os.getenv("OPENAI_API_KEY")
+# Retrieve the API key from Streamlit's secrets
+api_key = st.secrets["openai"]["api_key"]
+
+# Set the API key for OpenAI
+openai.api_key = api_key
 
 # Set Streamlit settings
 st.set_page_config(layout="wide", page_icon=None, initial_sidebar_state="auto", page_title=None, menu_items={'Get help': None, 'Report a bug': None, 'About': None})
+
 
 def chatbot_response(skills_list):
     model = "gpt-4"
